@@ -1,0 +1,16 @@
+extends layout
+
+block content
+	form.search(method="GET" action="/search")
+		h1 Search
+		input.searchvalue(type="text" name="search")
+		input.btn.btn-default(type="submit" value="Find")
+
+	div#results
+		h2 Results
+		div.results-container
+		script#results-template(type="text/x-handlebars-template")
+			<p>Programming Language: {{lang}}</p>
+			<b>Description: {{desc}}</b>
+block script
+	script(src="/models/main.js")
